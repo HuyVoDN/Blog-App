@@ -12,4 +12,5 @@
     -React Router
     -Node.JS
     -MySQL
+    -Debating on using dnd kit for drag and drop. Will decide later lol..
 ---
