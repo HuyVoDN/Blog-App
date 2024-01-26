@@ -1,13 +1,21 @@
 @import 'https://fonts.googleapis.com/css2?family=Lato&family=Rubik+Doodle+Shadow&display=swap';
 $lightPurple: #e1b1f7;
 
-.app
-{
-    .container
-    {
+.app {
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 1024px;
+        font-family: Tahoma;
+
+        .link {
+            text-decoration: none;
+            color: inherit;
+        }
+
         // For Login and Register Pages
-        .auth
-        {
+        .auth {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -15,56 +23,99 @@ $lightPurple: #e1b1f7;
             background-color: $lightPurple;
             height: 100vh;
         }
-        h1
-        {
-            font-size:20px;
-            color:purple;
+
+        h1 {
+            font-size: 20px;
+            color: purple;
             margin-bottom: 20px;
             font-family: 'Lato', sans-serif;
         }
-        form
-        {
-            display:flex;
+
+        form {
+            display: flex;
             flex-direction: column;
-            padding:60px;
+            padding: 60px;
             background-color: rgb(255, 255, 255);
             width: 200px;
             gap: 20px;
-            
-            input 
-            {
+
+            input {
                 padding: 10px;
                 border: none;
                 border-bottom: 1px solid gray;
             }
 
-            button
-            {
+            button {
                 padding: 10px;
-                border:none;
-                background-color:purple;
+                border: none;
+                background-color: purple;
                 cursor: pointer;
-                color:white;
+                color: white;
                 transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
             }
-            
-            button:hover
-            {
+
+            button:hover {
                 background-color: rgb(255, 0, 255);
-                color:rgb(0, 0, 0);
-            }
-            p 
-            {
-                font-size:12px;
-                color:red;
-                text-align:center;
+                color: rgb(0, 0, 0);
             }
 
-            span
-            {
+            p {
+                font-size: 12px;
+                color: red;
+                text-align: center;
+            }
+
+            span {
                 font-size: 15px;
                 text-align: center;
             }
+
+        }
+
+        .navbar {
+            .container {
+                padding: 10px 0px;
+                display: flex;
+                align-items:center;
+                justify-content: space-between;
+                font-family:sans-serif;
+
+                .logo {
+                    img {
+                        width: 120px;
+                    }
+                }
+
+                .links {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    h6{
+                     font-weight: 300;
+                     font-size: 16px;
+                        
+                    }
+                    span{
+                        cursor: pointer;
+                    }
+                    .write{
+                        background-color: $lightPurple;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        display:flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight:300;
+                        transition: background-color 0.25s ease, color 0.25s ease;
+                        &:hover{
+                            background-color: rgb(255, 0, 255);
+                            color: rgb(0, 0, 0);
+                        }
+                    }
+                }
+            }
         }
     }
-} 
+
+}
