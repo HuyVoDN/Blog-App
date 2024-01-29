@@ -5,27 +5,27 @@ const Home = () => {
   const posts = [
     {
       id: 1,
-      title: "Lorem ipsum dolor sit amet",
+      title: "chibi chibi chaba chaba dubi dubi daba daba",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      img: "https://preview.redd.it/since-dmc-5s-release-vergil-has-become-an-iconic-character-v0-8a0wds8pzwmb1.jpg?auto=webp&s=5f74091641c0032621e6bff5d72b7bfbcfa36fbe"
+      img: "https://media1.tenor.com/m/mJ_Og97j5WwAAAAC/chipi-chapa.gif"
     },
     {
       id: 2,
-      title: "Lorem ipsum dolor sit amet",
+      title: "chibi chibi chaba chaba dubi dubi daba daba",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      img: "https://preview.redd.it/since-dmc-5s-release-vergil-has-become-an-iconic-character-v0-8a0wds8pzwmb1.jpg?auto=webp&s=5f74091641c0032621e6bff5d72b7bfbcfa36fbe"
+      img: "https://media1.tenor.com/m/mJ_Og97j5WwAAAAC/chipi-chapa.gif"
     },
     {
       id: 3,
-      title: "Lorem ipsum dolor sit amet",
+      title: "chibi chibi chaba chaba dubi dubi daba daba",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      img: "https://preview.redd.it/since-dmc-5s-release-vergil-has-become-an-iconic-character-v0-8a0wds8pzwmb1.jpg?auto=webp&s=5f74091641c0032621e6bff5d72b7bfbcfa36fbe"
+      img: "https://media1.tenor.com/m/mJ_Og97j5WwAAAAC/chipi-chapa.gif"
     },
     {
       id: 4,
-      title: "Lorem ipsum dolor sit amet",
+      title: "chibi chibi chaba chaba dubi dubi daba daba",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      img: "https://preview.redd.it/since-dmc-5s-release-vergil-has-become-an-iconic-character-v0-8a0wds8pzwmb1.jpg?auto=webp&s=5f74091641c0032621e6bff5d72b7bfbcfa36fbe"
+      img: "https://media1.tenor.com/m/mJ_Og97j5WwAAAAC/chipi-chapa.gif"
     },
   ];
   return (
