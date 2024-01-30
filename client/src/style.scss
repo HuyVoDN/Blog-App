@@ -353,15 +353,20 @@ $lightPurple: #e1b1f7;
                 }
                 
                 .menu{
-                   flex:2;
-                   display:flex; 
-                   flex-direction: column;
-                   gap: 20px;
-                
+                    flex:2;
+                    display:flex; 
+                    flex-direction: column;
+                    gap: 20px;
+                    
                    .item{
                         border: 1px solid lightgray;
-                        padding: 10px;
-                        
+                        padding: 8px;
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        font-size: 14px;
+                
                         h1{
                             color:black;
                             margin-bottom:0px; 
@@ -369,6 +374,46 @@ $lightPurple: #e1b1f7;
                             //font-size: 20px;
                         }
 
+                        .file{
+                            cursor: pointer;
+                            text-decoration: underline;
+                            margin-bottom:4px;
+                        }
+
+                        .buttons{
+                            display: flex;
+                            justify-content: space-between;
+                           
+                            .save-btn{
+                                cursor: pointer;
+                                color: purple;
+                                background-color: white;
+                                border: 1px solid purple;
+                                padding: 4px 5px;
+                                font-size: 16px;
+                            }
+                            
+                            .update-btn{
+                                cursor: pointer;
+                                color: rgb(255, 255, 255);
+                                background-color:purple;
+                                border: 1px solid white;
+                                padding: 4px 5px;
+                                font-size: 16px;
+                            }
+                        
+                        
+                        }
+                   }
+                   .cat{
+                    display:flex;
+                    align-items: center;
+                    gap: 3px;
+                    color: purple;
+                    padding: 2px;
+                    label{
+                        font-size: 16px;
+                    }
                    }
                 }
             }
