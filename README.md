@@ -13,5 +13,7 @@
     -React-Quill, utilizing the Quill text editor UI for postings.
     -Node.JS
     -MySQL
+    -BcryptJS, a password encryption library.
+    -Axios, promises-based/async library for HTTP Client.
     -Debating on using dnd kit for drag and drop. Will decide later lol..
 ---
