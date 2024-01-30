@@ -9,7 +9,8 @@
 ---
 ### Libraries/Stack/Techs used: 
     -React + Vite
-    -React Router
+    -React-Router
+    -React-Quill, utilizing the Quill text editor UI for postings.
     -Node.JS
     -MySQL
     -Debating on using dnd kit for drag and drop. Will decide later lol..
