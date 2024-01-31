@@ -1,7 +1,7 @@
 Port:
     Front: 5173.
-    Back: 3000.
-    SQL: 3307.
+    Back: 8800.
+    SQL: 3306.
 
 [1/30/2024]:
 I added Axios, a library made for http client request of async functions.
