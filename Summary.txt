@@ -5,7 +5,9 @@ Port:
 
 [1/30/2024]:
 I added Axios, a library made for http client request of async functions.
+
 I added a proxy into package.json to allow for easier url path. 
     What a proxy is? 
     It tells the development server to proxy any unknown requests, basically requests that didn't match a static file(predefined path or file) to that proxy u set up.
-    
+
+Added hashing functionality for passwords by utilizing bcrypt, a library made for passwords hashing. Will do more research on this once i wake up tmr.

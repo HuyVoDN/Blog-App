@@ -14,6 +14,8 @@
     -Node.JS
     -MySQL
     -BcryptJS, a password encryption library.
+    -JWT, Json Web Token.
+    -Cookie-parser
     -Axios, promises-based/async library for HTTP Client.
     -Debating on using dnd kit for drag and drop. Will decide later lol..
 ---
