@@ -1,5 +1,6 @@
 import {db} from "../db.js";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 export const register = (req, res) => {
     
     //Check if user exists
@@ -31,7 +32,7 @@ export const login = (req, res) => {
 
     //Check if user exists in database
     const query = "SELECT * FROM users WHERE username = ?";
-    db.query(query, [req, body.username], (err, result) => {
+    db.query(query, [req.body.username], (err, result) => {
         if(err)
             return res.json(err);
         if(result.length === 0)
@@ -42,6 +43,14 @@ export const login = (req, res) => {
 
     if(!validPassword)
         return res.status(400).json("Password is incorrect.");
+
+    const token = jwt.sign({id: result[0].id}, "jwtkey");
+    const {password, ...info} = result[0]; // only take in other info, not password
+
+    res.cookie("access_token", token, {
+        httpOnly: true
+    }).status(200).json(info);
+
     });
 
     //Login user in once verified user authentications
