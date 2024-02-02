@@ -1,8 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 import axios from "axios";
-
+import { AuthContext } from '../context/authContext.jsx';
 const Login = () => {
   const [inputs, setInputs] = useState({
     username: "",
@@ -13,6 +13,8 @@ const Login = () => {
   
   const navigate = useNavigate();
 
+  const {login} = useContext(AuthContext);
+
   const handleChange = (e) => {
     setInputs(prev => ({...prev, [e.target.name]: e.target.value}));
   };
@@ -20,9 +22,8 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8800/api/auth/login", inputs);
+      await login(inputs);
       navigate("/");
-      //console.log(res);
     } catch (err) {
         setError(err.response.data);
     };
@@ -35,7 +36,7 @@ const Login = () => {
         <input type="text" placeholder="username" name="username" onChange={handleChange}/>
         <input type="password" placeholder="password" name="password" onChange={handleChange}/>
         <button onClick={handleSubmit}>Login</button>
-        <p>This is an error!</p>
+        { err && <p>{err}</p>}
         <span>Do you have an account? <Link to="/register">Register</Link>
         </span>
       </form>
