@@ -2,37 +2,73 @@ import React from 'react';
 import Edit from '../img/Edit_Icon.png';
 import Delete from '../img/Delete_Icon.png';
 import Menu from '../components/Menu';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
+import {useEffect, useState, useContext} from 'react';
+import axios from 'axios';
+import moment from 'moment';
+import { AuthContext } from '../context/authContext.jsx';
 const Single = () => {
+
+  const [post, setPost] = useState({});
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  const postId = location.pathname.split("/")[2];
+  const {currentUser} = useContext(AuthContext);
+  const currentUsername = currentUser.other.username;
+  //console.log(location);
+
+  useEffect( () => {
+    const fetchData = async () => {
+      try
+      {
+        const res = await axios.get(`http://localhost:8800/api/posts/${postId}`);
+        setPost(res.data);
+      } catch (err) 
+      {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, [postId]);
+
+  const handleDelete = async () => {
+    try 
+    {
+      await axios.delete(`http://localhost:8800/api/posts/${postId}`);
+      navigate("/");
+    } catch (err) 
+    {
+      console.log(err);
+    };
+  };
+  console.log(post); // error checking
+  console.log(currentUser.other.username); // error checking, will break website once logged out
   return (
     <div className='single'>
       <div className="content">
-        <img src="https://media1.tenor.com/m/mJ_Og97j5WwAAAAC/chipi-chapa.gif" alt="" />
+        <img src={post?.img} alt="" />
         <div className="user">
-          <img src="https://pbs.twimg.com/media/Fac-k5DUYAMIA3C?format=jpg&name=4096x4096" alt="" />
+          {
+            post.userImg && <img src={post?.userImg} alt="" />
+          }
           <div className="info">
-            <span>HuyVo0812</span>
-            <p>Posted 2 days ago</p>
+            <span>{post.username}</span>
+            <p>Posted {moment(post.date).fromNow()}</p>
           </div>
-          <div className="edit">
-            <Link to={`/write?edit=2`}>
+          { currentUsername === post.username && <div className="edit">
+            <Link to={`/write?edit=2`}> 
               <img src={Edit} alt="" />
             </Link>
-            <img src={Delete} alt="" />
+            <img onClick={handleDelete} src={Delete} alt="" />
           </div>
+          }
         </div>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quae similique odio quis at illum, id ut.
+        <h1>
+          {post?.title}
         </h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut earum quia eius quisquam minus omnis quas, tempora ipsum quam labore illo dolor sapiente, non neque enim. Velit, consequuntur explicabo.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut earum quia eius quisquam minus omnis quas, tempora ipsum quam labore illo dolor sapiente, non neque enim. Velit, consequuntur explicabo.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut earum quia eius quisquam minus omnis quas, tempora ipsum quam labore illo dolor sapiente, non neque enim. Velit, consequuntur explicabo.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut earum quia eius quisquam minus omnis quas, tempora ipsum quam labore illo dolor sapiente, non neque enim. Velit, consequuntur explicabo.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut earum quia eius quisquam minus omnis quas, tempora ipsum quam labore illo dolor sapiente, non neque enim. Velit, consequuntur explicabo.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut earum quia eius quisquam minus omnis quas, tempora ipsum quam labore illo dolor sapiente, non neque enim. Velit, consequuntur explicabo.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut earum quia eius quisquam minus omnis quas, tempora ipsum quam labore illo dolor sapiente, non neque enim. Velit, consequuntur explicabo.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut earum quia eius quisquam minus omnis quas, tempora ipsum quam labore illo dolor sapiente, non neque enim. Velit, consequuntur explicabo.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ut earum quia eius quisquam minus omnis quas, tempora ipsum quam labore illo dolor sapiente, non neque enim. Velit, consequuntur explicabo.
+        <p>
+          {post?.desc}
         </p>
         
       </div>

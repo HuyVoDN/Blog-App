@@ -45,18 +45,20 @@ export const login = (req, res) => {
         return res.status(400).json("Incorrect username or password!");
 
     const token = jwt.sign({id:result[0].id}, "jwtkey");
-    console.log(`User token is: ${token}`);
     const {password, ...other} = result[0]; // only take in other info, not password
     res.cookie("access_token", token, {
         httpOnly: true,
     }).status(200).json({other});
+
+    console.log(`User token is: ${req.cookies.access_token}`);
     });
+  
 //Login user in once verified user authentications
 };
 
 export const logout = (req, res) => {
     res.clearCookie("access_token", {
         sameSite:"none",
-        secure: true,
+        secure: false,
     }).status(200).json("User has been logged out!");
 };
