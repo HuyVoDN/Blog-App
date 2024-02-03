@@ -48,6 +48,7 @@ export const login = (req, res) => {
     const {password, ...other} = result[0]; // only take in other info, not password
     res.cookie("access_token", token, {
         httpOnly: true,
+        secure: false,
     }).status(200).json({other});
 
     console.log(`User token is: ${req.cookies.access_token}`);

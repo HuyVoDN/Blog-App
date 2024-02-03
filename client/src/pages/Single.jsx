@@ -2,7 +2,7 @@ import React from 'react';
 import Edit from '../img/Edit_Icon.png';
 import Delete from '../img/Delete_Icon.png';
 import Menu from '../components/Menu';
-import { Link, useLocation, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {useEffect, useState, useContext} from 'react';
 import axios from 'axios';
 import moment from 'moment';
@@ -15,14 +15,14 @@ const Single = () => {
   const navigate = useNavigate();
   const postId = location.pathname.split("/")[2];
   const {currentUser} = useContext(AuthContext);
-  const currentUsername = currentUser.other.username;
+  
   //console.log(location);
 
   useEffect( () => {
     const fetchData = async () => {
       try
       {
-        const res = await axios.get(`http://localhost:8800/api/posts/${postId}`);
+        const res = await axios.get(`http://localhost:8800/api/posts/${postId}`, {withCredentials: true});
         setPost(res.data);
       } catch (err) 
       {
@@ -35,7 +35,7 @@ const Single = () => {
   const handleDelete = async () => {
     try 
     {
-      await axios.delete(`http://localhost:8800/api/posts/${postId}`);
+      await axios.delete(`http://localhost:8800/api/posts/${postId}`, {withCredentials: true});
       navigate("/");
     } catch (err) 
     {
@@ -43,7 +43,7 @@ const Single = () => {
     };
   };
   console.log(post); // error checking
-  console.log(currentUser.other.username); // error checking, will break website once logged out
+ // console.log(currentUser.other.username); // error checking, will break website once logged out
   return (
     <div className='single'>
       <div className="content">
@@ -53,10 +53,10 @@ const Single = () => {
             post.userImg && <img src={post?.userImg} alt="" />
           }
           <div className="info">
-            <span>{post.username}</span>
+            <span>{post?.username}</span>
             <p>Posted {moment(post.date).fromNow()}</p>
           </div>
-          { currentUsername === post.username && <div className="edit">
+          { currentUser.other?.username === post.username && <div className="edit">
             <Link to={`/write?edit=2`}> 
               <img src={Edit} alt="" />
             </Link>

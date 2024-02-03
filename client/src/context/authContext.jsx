@@ -12,7 +12,7 @@ export const AuthContextProvider = ({ children }) => {
         setCurrentUser(res.data);
     };
     const logout = async (inputs) => {
-        await axios.post("http://localhost:8800/api/auth/logout");
+        await axios.post("http://localhost:8800/api/auth/logout" ,{withCredentials: true});
         setCurrentUser(null);
     };
 
