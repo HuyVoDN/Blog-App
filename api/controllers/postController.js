@@ -29,7 +29,7 @@ export const deletePost = (req, res) => {
     console.log(token);
     if(!token)
         {
-            console.log("ur gay");
+            console.log("Cookie was not logged in.");
             return res.status(401).json("Unauthorized");
         }
     jwt.verify(token, "jwtkey", (err, userInfo) => {
