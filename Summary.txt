@@ -17,3 +17,10 @@ Single.jsx axios is for routing to the backend of the website, that's why its /a
     - also set a condition that if username of post is not the same as the logged in, it'll remove.
     - for some reason, when console log currentUser, it returns a parameter with the name of "other", in which it contains all the information, but through another layer. Might wanna check authController.js in api, wtf?
 Finally found the fix, take a look at the parameter for axios.delete within the Single.jsx, add withCredentials in so it will log your cookies in.
+
+[2/4/2024]:
+ToDo:
+    + (!) Fix the bug where the Single posting website breaks when user is logged out.
+    + Finish with addPost functionality.
+    + Add user's information modification functionality.
+    + Remove dummy data for sidebar, and have it generated (maybe based on recommendation algorith?) dynamically from the database instead.

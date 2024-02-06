@@ -10,8 +10,9 @@ const app = express();
 app.use(cors({credentials: true, origin: 'http://localhost:5173'}));
 app.use(express.json());
 app.use(cookieParser());
+
 // app.get("/test", (req, res) => {
-//     res.json("Welcome to blog app");
+//     res.json("My ass");
 // }); //test
 
 app.use("/api/auth", authRoutes);

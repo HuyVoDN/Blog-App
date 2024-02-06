@@ -7,6 +7,7 @@ import {useEffect, useState, useContext} from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import { AuthContext } from '../context/authContext.jsx';
+
 const Single = () => {
 
   const [post, setPost] = useState({});
