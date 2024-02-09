@@ -19,4 +19,5 @@
     -Axios, promises-based/async library for HTTP Client.
     -Moment, a library for datetime.
     -Debating on using dnd kit for drag and drop. Will decide later lol..
+    -Multer, a library for handling uploads
 ---
