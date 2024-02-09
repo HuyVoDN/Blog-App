@@ -43,7 +43,7 @@ const Single = () => {
       console.log(err);
     };
   };
-  console.log(post); // error checking
+  //console.log(post); // error checking
  // console.log(currentUser.other.username); // error checking, will break website once logged out
   return (
     <div className='single'>
@@ -73,7 +73,7 @@ const Single = () => {
         </p>
         
       </div>
-      <Menu/>
+      <Menu cat={post.cat}/>
     </div>
   )
 }
