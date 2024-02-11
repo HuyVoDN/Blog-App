@@ -2,7 +2,7 @@
 > This is my first self-taught full-stack web application.
 ---
 <p>To test for yourself, clone the entire project to your local repos 
- and do <strong><em>npm install</em></strong> inside of the client folder. <br>
+ and do <strong><em>npm install</em></strong> inside of the client, and the api folder. <br>
     Ex: cd client --> npm i
 </p>
 
